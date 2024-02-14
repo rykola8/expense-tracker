@@ -20,12 +20,58 @@ expenses = []
 
 # load expenses from expenses.json file here
 # https://www.geeksforgeeks.org/read-write-and-parse-json-using-python/ (Python read JSON file)
+
+import json
+f = open('expenses.json',) 
+data = json.load(f)
+
+
 pass
 
 while True:
     command = input("\nChoose command:")
     if command == "1":
+        dictionary_expenses = {}
+        
+        name = input('enter name of expenses: ')
+        dictionary_expenses["name"] = name
+
+        summa = input('enter summa of expenses: ')
+        dictionary_expenses["summa"] = summa
+                    
+        category = input('enter category of expenses: ')
+        dictionary_expenses["category"] = category
+
+        expenses.append(dictionary_expenses)
+    
+    if command == "2":
+        print(expenses)
         pass
+    
+    if command == "3":
+        def my_func(expense):
+            return int(expense["summa"])
+        
+        expenses.sort(key = my_func, reverse = True)
+        print(expenses[0:10])
+        pass
+    
+    if command == "4":
+        def my_func(expense):
+            return int(expense["summa"])
+        
+        expenses.sort(key = my_func)
+        print(expenses[0:10])
+        pass
+    
+    if command == "5":
+        pass
+    
+    
+    
+    
+    
+    
     if command == "e":
         print("Exiting...")
         break
