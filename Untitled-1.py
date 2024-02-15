@@ -1,6 +1,10 @@
 fruit = [{"name": 'school', "cena":'30', "category": 'needs'},{"name": "food", "cena": '40', "category": 'foods'}]
 
-def my_func(expenses):
-    return expenses["cena"] 
-fruit.sort(key = my_func)
-print(fruit)
+
+la = 0
+lenght = len(fruit)
+for x in fruit:
+    la += int(x["cena"])
+    
+middle = int(la) / int(lenght)
+print(middle)

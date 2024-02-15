@@ -65,7 +65,17 @@ while True:
         pass
     
     if command == "5":
-        pass
+            la = 0
+            lenght = len(expenses)
+            for x in expenses:
+                la += int(x["summa"])
+        
+            middle = int(la) / int(lenght)
+            print(middle)
+
+
+
+            pass
     
     
     
